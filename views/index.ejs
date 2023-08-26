@@ -1,0 +1,35 @@
+<div class="author">
+    <h1 class="author_heading">Hi, I am Ifeoma</h1>
+    <p class="author_body">Web developer and content creator</p>
+</div>
+
+<img src="img\sasha-freemind-Pv5WeEyxMWU-unsplash.jpg" alt="person looking out of the window" class="hero-image" width="981" height="528">
+
+<section class="articles">
+<h2 class="articles_heading">Latest posts</h2>
+
+<ul class="article-ul">
+ <% data.foreach(post => { %> 
+<li>
+    <a href="/post/<%- post_id %>">
+        <span><%- post.title %> </span>
+        <span class="article-list_date"><%- post.createdAt.toDateString() %></span>
+    </a>
+</li>
+
+   <% }) %>
+
+</ul>
+
+
+
+  <% if (nextPage !== null) {  %>
+   <a href="/?page=<%- nextPage %>" class="pagination">&lt; View Older Posts</a>
+  <% } %>
+
+
+
+
+
+
+</section>
